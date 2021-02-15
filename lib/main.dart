@@ -9,7 +9,8 @@ void main() {
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: PRIMARY_COLOR,
-                fontSize: 18),
+                fontSize: 18,
+                fontFamily: 'CairoRegular'),
           ),
         ),
       );
@@ -22,35 +23,29 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MyHomePage(title: "Let's Travel"));
+        home: MyHomePage());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          "Let's Travel",
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontFamily: 'CairoRegular'),
+        ),
       ),
       body: Center(
           child: Text(
         "Let's Travel Home Page",
         style: TextStyle(
-            fontWeight: FontWeight.bold, color: PRIMARY_COLOR, fontSize: 18),
+            color: PRIMARY_COLOR, fontSize: 18, fontFamily: 'CairoBold'),
       )),
     );
   }
