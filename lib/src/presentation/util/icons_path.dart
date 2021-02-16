@@ -24,5 +24,6 @@ const String DROP_ARROW_ICON='assets/icons/drop_arrow.svg';
 const String ADD_POST_ICON='assets/icons/add_post_icon.svg';
 const String ADD_POST_COMMENT_ICON='assets/icons/add_post_comment.svg';
 const String LOCATION_ICON='assets/icons/location.svg';
+const String INTRO_SECOND_ICON='assets/icons/intro_second.svg';
 
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letstravel/src/presentation/ui/onbording.dart';
 import 'package:letstravel/src/presentation/util/colors.dart';
 import 'package:letstravel/src/presentation/util/images_path.dart';
 
@@ -42,7 +43,7 @@ class MyHomePage extends StatelessWidget {
               color: Colors.white, fontSize: 18, fontFamily: 'CairoRegular'),
         ),
       ),
-      body: HomeBody(),
+      body: Onbording(),
     );
   }
 }
