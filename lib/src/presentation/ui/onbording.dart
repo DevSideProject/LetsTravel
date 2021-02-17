@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:letstravel/src/business_logic/models/onbording_content.dart';
+import 'package:letstravel/src/presentation/util/colors.dart';
 
 import 'home.dart';
 
@@ -30,6 +33,7 @@ class _OnBordingState extends State<Onbording> {
       body: Column(
         children: [
           Expanded(
+            //Page View Scrolling
             child: PageView.builder(
               controller: _controller,
               itemCount: contents.length,
@@ -38,32 +42,52 @@ class _OnBordingState extends State<Onbording> {
                   currentIndex = index;
                 });
               },
+              //Page Content
               itemBuilder: (_, i) {
-                return Padding(
-                  padding: const EdgeInsets.all(40),
-                  child: Column(
-                    children: [
-                      Image(
-                        image: AssetImage(contents[i].image),
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            contents[i].title,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: PRIMARY_COLOR,
+                              fontFamily: 'CairoBold',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            contents[i].discription,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 16,
+                              height: 1,
+                              fontFamily: 'CairoRegular',
+                              color: TEXT_COLOR,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        contents[i].title,
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 20),
+                          Image(
+                            image: AssetImage(contents[i].image),
+                            height: 250,
+                            width: 250,
+                          )
+                        ],
                       ),
-                      SizedBox(height: 20),
-                      Text(
-                        contents[i].discription,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 );
               },
             ),
@@ -73,38 +97,45 @@ class _OnBordingState extends State<Onbording> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 contents.length,
-                    (index) => buildDot(index, context),
+                (index) => buildDot(index, context),
               ),
             ),
           ),
           Container(
+            alignment: Alignment.bottomRight,
             height: 60,
-            margin: EdgeInsets.all(40),
-            width: double.infinity,
-            child: FlatButton(
-              child: Text(
-                  currentIndex == contents.length - 1 ? "Continue" : "Next"),
+            width: 100,
+            margin: EdgeInsets.all(10),
+            child: TextButton(
+              child: Text("Skip"),
               onPressed: () {
-                if (currentIndex == contents.length - 1) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => Home(),
-                    ),
-                  );
-                }
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => Home(),
+                  ),
+                );
                 _controller.nextPage(
                   duration: Duration(milliseconds: 100),
                   curve: Curves.bounceIn,
                 );
               },
-              color: Theme.of(context).primaryColor,
-              textColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(8),
+                // ),
+
               ),
+
+              // style: ButtonStyle(
+              //   textStyle: TextStyle(
+              //     color: PRIMARY_COLOR,
+              //     textColor: Colors.white,
+              //   ),
+              // ),
+              //
+
             ),
-          )
         ],
       ),
     );
@@ -117,7 +148,7 @@ class _OnBordingState extends State<Onbording> {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Theme.of(context).primaryColor,
+        color: PRIMARY_COLOR,
       ),
     );
   }
