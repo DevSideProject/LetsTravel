@@ -46,52 +46,43 @@ class _OnBordingState extends State<Onbording> {
               itemBuilder: (_, i) {
                 return Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
+                    Container(
+                      margin: EdgeInsets.all(32),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             contents[i].title,
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 24,
                               color: PRIMARY_COLOR,
                               fontFamily: 'CairoBold',
-                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
                             contents[i].discription,
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 16,
-                              height: 1,
+                              fontSize: 18,
+                              height: 1.3,
                               fontFamily: 'CairoRegular',
-                              color: TEXT_COLOR,
+                              color: Colors.black87,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(height: 20),
-                          Image(
-                            image: AssetImage(contents[i].image),
-                            height: 250,
-                            width: 250,
-                          )
-                        ],
-                      ),
-                    ),
+                    Expanded(
+                        child: Image(
+                      alignment: Alignment.center,
+                      image: AssetImage(contents[i].image),
+                    )),
                   ],
                 );
               },
             ),
           ),
+          SizedBox(height: 10),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,12 +93,14 @@ class _OnBordingState extends State<Onbording> {
             ),
           ),
           Container(
-            alignment: Alignment.bottomRight,
-            height: 60,
-            width: 100,
-            margin: EdgeInsets.all(10),
-            child: TextButton(
-              child: Text("Skip"),
+            alignment: Alignment.centerRight,
+            width: double.infinity,
+            margin: EdgeInsets.all(16),
+            child: OutlinedButton(
+              child: Text(
+                "Skip",
+                style: TextStyle(fontFamily: 'CairoRegular'),
+              ),
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
@@ -120,22 +113,14 @@ class _OnBordingState extends State<Onbording> {
                   curve: Curves.bounceIn,
                 );
               },
-
-                // shape: RoundedRectangleBorder(
-                //   borderRadius: BorderRadius.circular(8),
-                // ),
-
+              style: OutlinedButton.styleFrom(
+                primary: PRIMARY_COLOR,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
               ),
-
-              // style: ButtonStyle(
-              //   textStyle: TextStyle(
-              //     color: PRIMARY_COLOR,
-              //     textColor: Colors.white,
-              //   ),
-              // ),
-              //
-
             ),
+          ),
         ],
       ),
     );
@@ -147,7 +132,7 @@ class _OnBordingState extends State<Onbording> {
       width: currentIndex == index ? 25 : 10,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         color: PRIMARY_COLOR,
       ),
     );

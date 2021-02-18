@@ -52,3 +52,11 @@ flutter:
     - family: CairoBold
       fonts:
         - asset: assets/fonts/cairo_bold.ttf
+
+    - family: RobotoRegular
+      fonts:
+        - asset: assets/fonts/roboto_regular.ttf
+
+    - family: RobotoBold
+      fonts:
+        - asset: assets/fonts/roboto_bold.ttf

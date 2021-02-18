@@ -13,15 +13,11 @@ List<OnbordingContent> contents = [
   OnbordingContent(
       title: "Let's Travel",
       image: INTRO_IMAGE,
-      discription: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "
-          "industry's standard dummy text ever since the 1500s, "
-          "when an unknown printer took a galley of type and scrambled it "
+      discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias at atque aut commodi cupiditate ea eum facilis fugit... "
   ),
   OnbordingContent(
       title: "Let's Travel",
       image: INTRO_SECOND_IMAGE,
-      discription: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the "
-          "industry's standard dummy text ever since the 1500s, "
-          "when an unknown printer took a galley of type and scrambled it "
+      discription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias at atque aut commodi cupiditate ea eum facilis fugit..."
   ),
 ];
