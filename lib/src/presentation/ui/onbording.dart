@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:letstravel/src/business_logic/models/onbording_content.dart';
+import 'package:letstravel/src/presentation/ui/choose_auth.dart';
 import 'package:letstravel/src/presentation/util/colors.dart';
 
 import 'home.dart';
@@ -105,7 +106,7 @@ class _OnBordingState extends State<Onbording> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => Home(),
+                    builder: (_) => ChooseAuthType(),
                   ),
                 );
                 _controller.nextPage(
