@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letstravel/src/presentation/ui/create_new_account.dart';
 import 'package:letstravel/src/presentation/util/colors.dart';
 import 'package:letstravel/src/presentation/util/constants.dart';
 import 'package:letstravel/src/presentation/util/images_path.dart';
@@ -78,7 +79,7 @@ class ChooseAuthType extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => Home(),
+                            builder: (_) => CreateNewAccount(),
                           ),
                         );
                       },
