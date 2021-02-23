@@ -59,34 +59,7 @@ class CreateNewAccount extends StatelessWidget {
             ),
           )
         ],
-      ), // body: Center(
-      //   child: Container(
-      //     constraints: BoxConstraints.expand(),
-      //     decoration: BoxDecoration(
-      //       image: DecorationImage(
-      //         image: AssetImage(ROMA_City_IMAGE),
-      //         fit: BoxFit.cover,
-      //       ),
-      //     ),
-      //     child: Column(
-      //       children: [
-      //         Container(
-      //           margin: EdgeInsets.only(top: 32),
-      //           child: Text(
-      //             "Create Account",
-      //             style: TextStyle(
-      //               fontFamily: CAIRO_BOLD,
-      //               fontSize: 28,
-      //               fontWeight: FontWeight.bold,
-      //               color: ACCENT_COLOR,
-      //             ),
-      //
-      //           ),
-      //         )
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      ),
     );
   }
 }
